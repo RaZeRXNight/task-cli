@@ -29,9 +29,10 @@ This project allows you to manage, create and delete tasks.  Each of which are s
 - python3 main.py delete 1
 
 ### Marking a task as in progress or done
-- python3 main.py mark-in-progress 1
-- python3 main.py mark-done 1
+- python3 main.py mark 1 in-progress
+- python3 main.py mark 1 done
 
 
 ## References
 - https://roadmap.sh/projects/task-tracker
+- 

@@ -1,7 +1,15 @@
+"""
+Script for managing tasks in the command line.
 
+- Add task
+- Update task
+- Mark task
+- Delete task
+
+- list tasks Status'
+"""
 
 import os
-from sys import argv
 from shutil import move
 import time
 import json

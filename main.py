@@ -8,10 +8,6 @@ Modules Needed:
 
 import os
 from sys import argv
-from shutil import move
-import time
-import json
-import datetime
 from scripts.task import *
 
 task_path = os.path.abspath("tasks")
@@ -35,7 +31,17 @@ def main():
             raise Exception(f"ERROR: INVALID COMMAND ENTERED: \n\tList of Commands: {list(CMD.keys())}")
         
         Func = CMD[argv[1]]
-        print(Func(*argv[2:]))
+        Result = Func(*argv[2:])
+        
+        if isinstance(Result, list):
+            if not Result:
+                print(f"There are {len(Result)} Tasks, Let's make some with Python3 add 'Description' ")
+            else:
+                print(f"There are {len(Result)} Tasks: ",*list(map(lambda x: x["description"], Result)), sep="\n\t")
+            return
+        
+        print(Result)
+        
         
     except Exception as e:
         print(e)
